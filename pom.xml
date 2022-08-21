@@ -3,6 +3,10 @@
   <groupId>fop.tst</groupId>
   <artifactId>a-fop-test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+    	<properties>
+  		<!-- Define the version of OPEN HTML TO PDF in the properties section of your POM. -->  	       
+  		<openhtml.version>1.0.10</openhtml.version>
+  	</properties>
   
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/fop -->
@@ -18,7 +22,6 @@
     <version>1.9.1</version>
 </dependency>
 
-
 <!-- https://mvnrepository.com/artifact/net.sf.jtidy/jtidy -->
 <dependency>
     <groupId>net.sf.jtidy</groupId>
@@ -26,6 +29,10 @@
     <version>r938</version>
 </dependency>
 
-  
+	<dependency>
+    <groupId>org.xhtmlrenderer</groupId>
+    <artifactId>flying-saucer-pdf-openpdf</artifactId>
+    <version>9.1.20</version>
+</dependency>
   </dependencies>
 </project>

@@ -10,7 +10,7 @@
     <fo:root media-usage="bounded-in-one-dimension">
       <fo:layout-master-set>
         <!-- every attribute set to auto -->
-        <fo:simple-page-master master-name="pm" page-width="auto"> 
+        <fo:simple-page-master master-name="pm" page-width="auto">
           <fo:region-body/>
         </fo:simple-page-master>
       </fo:layout-master-set>
@@ -22,8 +22,8 @@
     </fo:root>
   </xsl:template>
 
-  <xsl:template match="xhtml:div | 
-                       xhtml:frame | 
+  <xsl:template match="xhtml:div |
+                       xhtml:frame |
                        xhtml:frameset | xhtml:noframes | xhtml:iframe">
     <fo:block><xsl:apply-templates/></fo:block>
   </xsl:template>
@@ -47,7 +47,7 @@
           </xsl:choose>
         </fo:block>
       </fo:list-item-label>
-         
+
       <fo:list-item-body start-indent="body-start()">
         <fo:block><xsl:apply-templates/></fo:block>
       </fo:list-item-body>
@@ -92,11 +92,11 @@
   </xsl:template>
 
   <xsl:template match="xhtml:colgroup">
-    <fo:table-column column-width= "{@width}px" 
+    <fo:table-column column-width= "{@width}px"
                      column-number="{count(preceding::col)}">
      <!-- the html:colgroup/@span  corresponds to -->
      <!-- xsl:column-group/@number-columns-repeated -->
-     <!-- but should be ignored if the colgroup has children --> 
+     <!-- but should be ignored if the colgroup has children -->
      <xsl:attribute name="number-columns-repeated">
        <xsl:choose>
          <xsl:when test="not(col)"><xsl:value-of select="@span"/></xsl:when>
@@ -204,8 +204,8 @@
     </fo:list-block>
   </xsl:template>
 
-  <xsl:template match="xhtml:ul//xhtml:ul | 
-                       xhtml:ul//xhtml:ol | 
+  <xsl:template match="xhtml:ul//xhtml:ul |
+                       xhtml:ul//xhtml:ol |
                        xhtml:ol//xhtml:ol |
                        xhtml:ol//xhtml:ul">
     <fo:list-block margin-top="0em" margin-bottom="0em">
@@ -375,7 +375,7 @@
   </xsl:template>
 
   <xsl:template match="xhtml:abbr | xhtml:acronym">
-    <fo:inline font-variant="small-caps" letter-spacing="0.1em"> 
+    <fo:inline font-variant="small-caps" letter-spacing="0.1em">
       <xsl:apply-templates/>
     </fo:inline>
   </xsl:template>
